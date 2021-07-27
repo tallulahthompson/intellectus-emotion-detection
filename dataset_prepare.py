@@ -54,7 +54,7 @@ for i in tqdm(range(len(df))):
     img = Image.fromarray(mat)
 
     # train
-    if i < 28709 - 67:
+    if i < 3440 + 5041 + 10967 + 12444 + 4114 + 547 + 4215:
         if df['emotion'][i] == 0:
             img.save('data/train/angry/im'+str(angry)+'.png')
             angry += 1

@@ -45,7 +45,7 @@ def plot_model_history(model_history):
 train_dir = 'data/train'
 val_dir = 'data/test'
 
-num_train = 28709
+num_train = 3440 + 5041 + 10967 + 12444 + 4114 + 547 + 4215
 num_val = 7178
 batch_size = 64
 num_epoch = 50
@@ -115,7 +115,7 @@ elif mode == "display":
         ret, frame = cap.read()
         if not ret:
             break
-        facecasc = cv2.CascadeClassifier('lbpcascades/lbpcascade_frontalface_improved.xml')
+        facecasc = cv2.CascadeClassifier('lbpcascade_frontalface_improved.xml')
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         faces = facecasc.detectMultiScale(gray,scaleFactor=1.3, minNeighbors=5)
 
