@@ -1,0 +1,33 @@
+emotions = ['angry','fearful','happy','neutral','sad','surprised']
+
+train = [8842,9064,15568,14788,11695,7948]
+test = [2245,2266,3892,3697,2924,1986]
+
+angry = 8842
+fearful = 9064
+happy = 15568
+neutral = 14788
+sad = 11695
+surprised = 7948
+
+for i in range(0,len(emotions)):
+    total_emotion = train[i]+test[i]
+    ratio_train = 0.6 * total_emotion
+    ratio_test = 0.2 * total_emotion
+    print(emotions[i],total_emotion,ratio_train,ratio_test )
+    print(ratio_test - test[i])
+
+total = surprised + angry + neutral + fearful + sad + happy
+print(total)
+
+testangry = 2245
+testfearful = 2266
+testhappy = 3892
+testneutral = 3697
+testsad = 2924
+testsurprised = 1986
+total2 = testsurprised + testangry + testneutral + testfearful + testsad + testhappy
+
+print(total2)
+print(total+total2)
+
