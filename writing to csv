@@ -1,0 +1,33 @@
+import csv
+f = open("label_train.csv","w",newline="")
+angry = []
+fearful = []
+happy = []
+neutral = []
+sad = []
+surprised = []
+header = ["emotion","image name"]
+def append_to_list(emotion,list,index):
+    for i in range(0,index):
+        element = "im" + emotion + str(i) + ".png"
+        list.append(element)
+append_to_list("angry",angry,8843)
+append_to_list("fearful",fearful,9065)
+append_to_list("happy",happy,15568)
+append_to_list("neutral",neutral,14789)
+append_to_list("sad",sad,11696)
+append_to_list("surprised",surprised,7949)
+writer = csv.writer(f,delimiter=",")
+writer.writerow(header)
+def write_to_csv(emotion,list):
+    for element in list:
+        writer.writerow([emotion,element])
+write_to_csv("angry",angry)
+write_to_csv("fearful",fearful)
+write_to_csv("happy",happy)
+write_to_csv("neutral",neutral)
+write_to_csv("sad",sad)
+write_to_csv("surprised",surprised)
+
+f.close()
+
