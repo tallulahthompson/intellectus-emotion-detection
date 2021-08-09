@@ -1,0 +1,35 @@
+import shutil
+import os
+angry = []
+fearful = []
+happy = []
+neutral = []
+sad = []
+surprised = []
+
+def append_to_list(emotion,list,index,x):
+    for i in range((index-x),index):
+        element = "im" + emotion + str(i) + ".png"
+        list.append(element)
+
+append_to_list("angry",angry,9551,569)
+append_to_list("fearful",fearful,9589,524)
+append_to_list("happy",happy,16970,1401)
+append_to_list("neutral",neutral,16536,1747)
+append_to_list("sad",sad,12655,959)
+append_to_list("surprised",surprised,8349,400)
+
+def move_file(emotion,list,index,x):
+    for i in range(0,x):
+        original = "/Users/tallulahthompson/Downloads/Emotion-detection_master2/src/data/train/" + emotion + "/"+ list[i]
+        print(original)
+        new = "/Users/tallulahthompson/Downloads/Emotion-detection_master2/src/data/test/"+emotion + "/imtest" + emotion + str(i+index) + ".png"
+        destination = shutil.move(original, new)
+move_file("angry",angry,1677,569)
+move_file("fearful",fearful,1743,524)
+move_file("happy",happy,2492,1401)
+move_file("neutral",neutral,1951,1747)
+move_file("sad",sad,1966,959)
+move_file("surprised",surprised,1587,400)
+
+
